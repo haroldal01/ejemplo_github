@@ -31,6 +31,11 @@ El frontend muestra un indicador visual en el header que cambia según el estado
 - **Verificación periódica**: Se repite cada 30 segundos
 - **Indicador en tiempo real**: Muestra el estado actual de la conexión
 
+### Funcionalidad
+- **Verificación automática**: Se ejecuta al cargar la aplicación
+- **Verificación periódica**: Se repite cada 30 segundos
+- **Indicador en tiempo real**: Muestra el estado actual de la conexión
+
 ### Estados del Indicador
 1. **"checking"**: Verificando conexión (animación de pulso)
 2. **"connected"**: Backend conectado (verde)
