@@ -1,0 +1,190 @@
+mkdisk -size=10 -unit=M
+mkdisk -size=12
+mkdisk -size=10 -unit=M
+mkdisk -size=12
+mkdisk -size=15
+mkdisk -size=15
+mkdisk -size=10
+mkdisk -size=12
+mkdisk -size=10
+mkdisk -size=12
+pause
+
+
+# ELIMINANDO DISCOS
+rmdisk -driveletter=F
+pause
+
+
+fdisk -type=P -driveletter=A -size=900 -unit=K -name=particion1
+fdisk -type=P -driveletter=A -size=700 -unit=K -name=particion2
+fdisk -type=P -driveletter=A -size=900 -unit=K -name=particion3
+fdisk -type=E -driveletter=A -size=900 -unit=K -name=particion4
+pause
+
+fdisk -type=P -driveletter=B -size=100 -unit=K -name=particion1
+fdisk -type=P -driveletter=B -size=200 -unit=K -name=particion2
+fdisk -type=P -driveletter=B -size=100 -unit=K -name=particion3
+fdisk -type=E -driveletter=B -size=200 -unit=K -name=particion4
+pause
+
+fdisk -type=P -driveletter=C -size=100 -unit=K -name=particion1
+fdisk -type=P -driveletter=C -size=200 -unit=K -name=particion2
+fdisk -type=P -driveletter=C -size=100 -unit=K -name=particion3
+fdisk -type=E -driveletter=C -size=200 -unit=K -name=particion4
+
+
+fdisk -type=P -driveletter=D -size=100 -unit=K -name=particion1
+fdisk -type=P -driveletter=D -size=200 -unit=K -name=particion2
+fdisk -type=P -driveletter=D -size=100 -unit=K -name=particion3
+fdisk -type=E -driveletter=D -size=200 -unit=K -name=particion4
+
+
+fdisk -type=P -driveletter=J -size=500 -unit=K -name=particion1
+fdisk -type=P -driveletter=J -size=500 -unit=K -name=particion2
+fdisk -type=P -driveletter=J -size=500 -unit=K -name=particion3
+fdisk -type=E -driveletter=J -size=500 -unit=K -name=particion4
+
+
+# ELIMINANDO PARTICIONES DEL DISCO C
+fdisk -delete=full -driveletter=C -name=particion1
+fdisk -delete=full -driveletter=C -name=particion2
+fdisk -delete=full -driveletter=C -name=particion4
+fdisk -delete=full -driveletter=C -name=particion3
+pause
+
+
+fdisk -add=-200 -unit=K -driveletter=A -name=particion1
+fdisk -add=-200 -unit=K -driveletter=A -name=particion3
+pause
+
+# MONTANDO PARTICIONES
+mount -driveletter=A -name=particion1
+mount -driveletter=A -name=particion2
+mount -driveletter=A -name=particion3
+
+mount -driveletter=D -name=particion1
+mount -driveletter=D -name=particion2
+mount -driveletter=D -name=particion3
+
+mount -driveletter=J -name=particion1
+mount -driveletter=J -name=particion2
+mount -driveletter=J -name=particion3
+
+pause
+
+
+
+# =====COLOCAR LOS DÍGITOS DEL CARNET=====
+# Dando sistema de archivos a las particiones
+mkfs -type=full -id=A100 -fs=3fs
+mkfs -type=full -id=A200 -fs=3fs
+mkfs -type=full -id=A300 -fs=2fs
+
+mkfs -type=full -id=D100 -fs=3fs
+mkfs -type=full -id=D200 -fs=3fs
+mkfs -type=full -id=D300 -fs=2fs
+
+mkfs -type=full -id=J100 -fs=3fs
+mkfs -type=full -id=J200 -fs=3fs
+mkfs -type=full -id=J300 -fs=3fs
+
+pause
+
+
+
+# =====COLOCAR LOS DÍGITOS DEL CARNET=====
+login -user=root -pass=123 -id=A100
+
+mkgrp -name=grupo1
+mkgrp -name=grupo2
+rmgrp -name=grupo2
+
+mkusr -user=user1 -pass=123 -grp=grupo1
+mkusr -user=user2 -pass=123 -grp=grupo1
+rmusr -user=user2
+
+logout
+pause 
+
+
+# =====COLOCAR LOS DÍGITOS DEL CARNET=====
+login -user=user1 -pass=123 -id=A100
+mkdir -r -path=/home/user/docs
+mkfile -size=15 -path=/home/user/docs/a.txt
+mkfile -size=15 -path=/home/user/tareas/a.txt -r
+#Sobrescribiendo a.txt
+mkfile -size=45 -path=/home/user/docs/a.txt  
+logout
+pause
+
+
+
+# =====COLOCAR LOS DÍGITOS DEL CARNET=====
+
+# === USUARIO ROOT===
+
+login -user=root -pass=123 -id=D100
+
+mkdir -r -path=/home/user/documentos
+mkdir -r -path=/home/user/tareas
+
+mkfile -size=10 -path=/home/user/documentos/a.txt
+mkfile -size=10 -path=/home/user/documentos/b.txt
+mkfile -size=10 -path=/home/user/documentos/c.txt
+mkfile -size=10 -path=/home/user/documentos/d.txt
+mkfile -size=10 -path=/home/user/documentos/e.txt
+mkfile -size=10 -path=/home/user/documentos/f.txt
+mkfile -size=10 -path=/home/user/documentos/g.txt
+mkfile -size=10 -path=/home/user/documentos/h.txt
+
+mkfile -size=20 -path=/home/user/documentos/g.txt
+mkfile -size=20 -path=/home/user/documentos/h.txt
+
+logout
+
+
+login -user=root -pass=123 -id=J100
+
+mkdir -r -path=/home/user/documentos
+mkdir -r -path=/home/user/tareas
+
+mkfile -size=40 -path=/home/user/tareas/a.txt
+mkfile -size=40 -path=/home/user/tareas/b.txt
+mkfile -size=40 -path=/home/user/tareas/c.txt
+mkfile -size=40 -path=/home/user/tareas/d.txt
+mkfile -size=40 -path=/home/user/tareas/e.txt
+mkfile -size=40 -path=/home/user/tareas/f.txt
+mkfile -size=40 -path=/home/user/tareas/g.txt
+mkfile -size=40 -path=/home/user/tareas/h.txt
+
+mkfile -size=80 -path=/home/user/tareas/g.txt
+mkfile -size=80 -path=/home/user/tareas/h.txt
+
+logout
+
+
+login -user=root -pass=123 -id=J300
+
+mkdir -r -path=/home/user/practicas
+mkdir -r -path=/home/user/proyectos
+
+mkfile -size=20 -path=/home/user/proyectos/p1.txt
+mkfile -size=30 -path=/home/user/proyectos/p2.txt
+mkfile -size=40 -path=/home/user/proyectos/p3.txt
+mkfile -size=50 -path=/home/user/proyectos/p4.txt
+mkfile -size=60 -path=/home/user/proyectos/p5.txt
+mkfile -size=70 -path=/home/user/proyectos/p6.txt
+mkfile -size=80 -path=/home/user/proyectos/p7.txt
+mkfile -size=90 -path=/home/user/proyectos/p8.txt
+
+mkfile -size=90 -path=/home/user/practicas/p1.txt
+mkfile -size=80 -path=/home/user/practicas/p2.txt
+mkfile -size=70 -path=/home/user/practicas/p3.txt
+mkfile -size=60 -path=/home/user/practicas/p4.txt
+mkfile -size=50 -path=/home/user/practicas/p5.txt
+mkfile -size=40 -path=/home/user/practicas/p6.txt
+mkfile -size=30 -path=/home/user/practicas/p7.txt
+mkfile -size=20 -path=/home/user/practicas/p8.txt
+
+logout

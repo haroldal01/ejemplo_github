@@ -1,0 +1,36 @@
+digraph Superblock_Report {
+    rankdir=TB;
+    node [fontname="Arial", shape=plaintext, style="filled", fontsize=10];
+    graph [bgcolor="#ffffff", pencolor="#333333", penwidth=2.0, style="rounded"];
+
+    superblock [
+        label=<
+            <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+                <TR><TD COLSPAN="2" BGCOLOR="#B3D9FF"><B>REPORTE DE SUPERBLOQUE</B></TD></TR>
+                <TR><TD COLSPAN="2" BGCOLOR="#E6F3FF"><B>Información General</B></TD></TR>
+                <TR><TD>Ruta del Disco</TD><TD>A</TD></TR>
+                <TR><TD>ID de Partición</TD><TD>A100</TD></TR>
+                <TR><TD>Tipo de Sistema</TD><TD>EXT3</TD></TR>
+                <TR><TD>Valor Mágico</TD><TD>0xEF53</TD></TR>
+                <TR><TD COLSPAN="2" BGCOLOR="#E6F3FF"><B>Estado del Sistema</B></TD></TR>
+                <TR><TD>Veces Montado</TD><TD>1</TD></TR>
+                <TR><TD COLSPAN="2" BGCOLOR="#E6F3FF"><B>Uso de Inodos y Bloques</B></TD></TR>
+                <TR><TD>Total de Inodos</TD><TD>1549</TD></TR>
+                <TR><TD>Inodos Libres</TD><TD>1549</TD></TR>
+                <TR><TD>Inodos Usados</TD><TD>0</TD></TR>
+                <TR><TD>Total de Bloques</TD><TD>4647</TD></TR>
+                <TR><TD>Bloques Libres</TD><TD>4647</TD></TR>
+                <TR><TD>Bloques Usados</TD><TD>0</TD></TR>
+                <TR><TD COLSPAN="2" BGCOLOR="#E6F3FF"><B>Detalles de la Estructura</B></TD></TR>
+                <TR><TD>Tamaño de Inodo</TD><TD>127 bytes</TD></TR>
+                <TR><TD>Tamaño de Bloque</TD><TD>64 bytes</TD></TR>
+                <TR><TD>Primer Inodo Libre</TD><TD>0</TD></TR>
+                <TR><TD>Primer Bloque Libre</TD><TD>0</TD></TR>
+                <TR><TD>Inicio Bitmap Inodos</TD><TD>11656</TD></TR>
+                <TR><TD>Inicio Bitmap Bloques</TD><TD>13205</TD></TR>
+                <TR><TD>Inicio Tabla Inodos</TD><TD>17852</TD></TR>
+                <TR><TD>Inicio Tabla Bloques</TD><TD>214575</TD></TR>
+            </TABLE>
+        >
+    ];
+}

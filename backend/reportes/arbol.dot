@@ -1,0 +1,62 @@
+digraph ext2_tree {
+    rankdir=LR;
+    node [fontname="Arial", shape=plain, style="filled", fontsize=10];
+    edge [color="#5A5A5A", arrowhead=normal];
+    graph [bgcolor="#ffffff", pencolor="#333333", penwidth=2.0, style="rounded"];
+
+    inode0 [
+        fillcolor="#F9F3C2",
+        label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFFEEB">
+                <TR><TD COLSPAN="2" BGCOLOR="#F7DF72"><B>root (Inodo 0)</B></TD></TR>
+                <TR><TD><B>Tipo</B></TD><TD>Directorio</TD></TR>
+                <TR><TD><B>UID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>GID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>Tamaño</B></TD><TD>0 bytes</TD></TR>
+                <TR><TD><B>Permisos</B></TD><TD>664</TD></TR>
+                <TR><TD><B>ATime</B></TD><TD></TD></TR>
+                <TR><TD><B>CTime</B></TD><TD>2025-06-20 17:12:</TD></TR>
+                <TR><TD><B>MTime</B></TD><TD>2025-06-20 17:12:</TD></TR>
+                <TR><TD><B>Bloques</B></TD><TD>B0=0\n</TD></TR>
+            </TABLE>
+        >
+    ];
+    inode0 -> inode1;
+    inode1 [
+        fillcolor="#F9F3C2",
+        label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFFEEB">
+                <TR><TD COLSPAN="2" BGCOLOR="#F7DF72"><B>users.txt (Inodo 1)</B></TD></TR>
+                <TR><TD><B>Tipo</B></TD><TD>Archivo</TD></TR>
+                <TR><TD><B>UID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>GID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>Tamaño</B></TD><TD>86 bytes</TD></TR>
+                <TR><TD><B>Permisos</B></TD><TD>664</TD></TR>
+                <TR><TD><B>ATime</B></TD><TD></TD></TR>
+                <TR><TD><B>CTime</B></TD><TD>2025-06-20 17:12:</TD></TR>
+                <TR><TD><B>MTime</B></TD><TD>2025-06-20 17:21:</TD></TR>
+                <TR><TD><B>Bloques</B></TD><TD>B0=1\n</TD></TR>
+            </TABLE>
+        >
+    ];
+    inode0 -> inode2;
+    inode2 [
+        fillcolor="#F9F3C2",
+        label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFFEEB">
+                <TR><TD COLSPAN="2" BGCOLOR="#F7DF72"><B>home (Inodo 2)</B></TD></TR>
+                <TR><TD><B>Tipo</B></TD><TD>Directorio</TD></TR>
+                <TR><TD><B>UID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>GID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>Tamaño</B></TD><TD>0 bytes</TD></TR>
+                <TR><TD><B>Permisos</B></TD><TD>664</TD></TR>
+                <TR><TD><B>ATime</B></TD><TD>20/06/2025 17:34</TD></TR>
+                <TR><TD><B>CTime</B></TD><TD>20/06/2025 17:34</TD></TR>
+                <TR><TD><B>MTime</B></TD><TD>20/06/2025 17:34</TD></TR>
+                <TR><TD><B>Bloques</B></TD><TD>B0=0\n</TD></TR>
+            </TABLE>
+        >
+    ];
+    inode2 -> inode1;
+    inode2 -> inode2;
+}

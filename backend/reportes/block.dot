@@ -1,0 +1,16 @@
+digraph Block_Report {
+    rankdir=TB;
+    node [fontname="Arial", shape=plain, style="filled", fontsize=10];
+    edge [color="#5A5A5A", arrowhead=normal];
+    graph [bgcolor="#ffffff", pencolor="#333333", penwidth=2.0, style="rounded"];
+
+    block0 [
+        label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#CDEFFA">
+                <TR><TD COLSPAN="1" BGCOLOR="#92E6F1"><B>Bloque 0</B></TD></TR>
+                <TR><TD ALIGN="LEFT">Tipo: Directorio<br/>Carpeta[0]: . (Inodo: 0)<br/>Carpeta[1]: .. (Inodo: 0)<br/>Carpeta[2]: users.txt (Inodo: 1)<br/>Carpeta[3]: home (Inodo: 2)<br/></TD></TR>
+            </TABLE>
+        >
+    ];
+
+}

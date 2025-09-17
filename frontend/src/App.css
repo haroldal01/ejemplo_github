@@ -1,0 +1,326 @@
+/* App.css */
+:root {
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --bg-color: #bed3f4;
+  --text-color: #2b2d42;
+  --light-text: #6c757d;
+  --border-color: #dee2e6;
+  --output-bg: #ffffff;
+  --success-color: #4cc9f0;
+  --error-color: #f72585;
+  --warning-color: #f8961e;
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.command-executor {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #e4f6f5;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.command-executor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+}
+
+.header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.header .subtitle {
+  color: var(--light-text);
+  font-size: 1.05rem;
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.command-input-container {
+  margin-bottom: 2rem;
+}
+
+.command-input-container label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.command-input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 150px;
+  transition: all 0.25s ease;
+  line-height: 1.5;
+  background-color: var(--output-bg);
+}
+
+.command-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.actions-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.file-input-container {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.file-input-container input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-input-label {
+  display: block;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.file-input-label:hover {
+  background-color: #f1f3f5;
+  border-color: var(--primary-color);
+}
+
+.file-input-label i {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+.execute-button {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.execute-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.execute-button:active {
+  transform: translateY(0);
+}
+
+.execute-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.execute-button i {
+  font-size: 1rem;
+}
+
+.output-container {
+  background-color: var(--output-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.output-container h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.output-container h2 i {
+  color: var(--primary-color);
+}
+
+.output {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 3rem;
+  color: #495057;
+  margin: 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  resize: vertical;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  line-height: 1.6;
+}
+
+.output.success {
+  border-left: 4px solid var(--success-color);
+}
+
+.output.error {
+  border-left: 4px solid var(--error-color);
+}
+
+.clear-button {
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: auto;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clear-button:hover {
+  background-color: var(--error-color);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.clear-button:active {
+  transform: translateY(0);
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.status-indicator {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.status-indicator.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.status-indicator.error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error-color);
+}
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+  .command-executor {
+    margin: 1.5rem;
+    padding: 1.75rem;
+    border-radius: 12px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .actions-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .file-input-container,
+  .execute-button,
+  .clear-button {
+    width: 100%;
+  }
+
+  .clear-button {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+}

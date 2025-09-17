@@ -1,0 +1,60 @@
+digraph Inode_Report {
+    rankdir=TB;
+    node [fontname="Arial", shape=plain, style="filled", fontsize=10];
+    edge [dir=none];
+    graph [bgcolor="#ffffff", pencolor="#333333", penwidth=2.0, style="rounded"];
+
+    inode0 [
+        fillcolor="#E6F3FF",
+        label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#E6F3FF">
+                <TR><TD COLSPAN="2" BGCOLOR="#B3D9FF"><B>Inodo 0</B></TD></TR>
+                <TR><TD><B>UID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>GID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>Tamaño</B></TD><TD>0 bytes</TD></TR>
+                <TR><TD><B>ATime</B></TD><TD></TD></TR>
+                <TR><TD><B>CTime</B></TD><TD>2025-06-20 17:12:</TD></TR>
+                <TR><TD><B>MTime</B></TD><TD>2025-06-20 17:12:</TD></TR>
+                <TR><TD><B>Permisos</B></TD><TD>664</TD></TR>
+                <TR><TD><B>Bloques</B></TD><TD>Bloque0: 0\n</TD></TR>
+            </TABLE>
+        >
+    ];
+
+    inode1 [
+        fillcolor="#E6F3FF",
+        label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#E6F3FF">
+                <TR><TD COLSPAN="2" BGCOLOR="#B3D9FF"><B>Inodo 1</B></TD></TR>
+                <TR><TD><B>UID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>GID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>Tamaño</B></TD><TD>86 bytes</TD></TR>
+                <TR><TD><B>ATime</B></TD><TD></TD></TR>
+                <TR><TD><B>CTime</B></TD><TD>2025-06-20 17:12:</TD></TR>
+                <TR><TD><B>MTime</B></TD><TD>2025-06-20 17:21:</TD></TR>
+                <TR><TD><B>Permisos</B></TD><TD>664</TD></TR>
+                <TR><TD><B>Bloques</B></TD><TD>Bloque0: 1\n</TD></TR>
+            </TABLE>
+        >
+    ];
+
+    inode0 -> inode1;
+    inode2 [
+        fillcolor="#E6F3FF",
+        label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#E6F3FF">
+                <TR><TD COLSPAN="2" BGCOLOR="#B3D9FF"><B>Inodo 2</B></TD></TR>
+                <TR><TD><B>UID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>GID</B></TD><TD>1</TD></TR>
+                <TR><TD><B>Tamaño</B></TD><TD>0 bytes</TD></TR>
+                <TR><TD><B>ATime</B></TD><TD>20/06/2025 17:34</TD></TR>
+                <TR><TD><B>CTime</B></TD><TD>20/06/2025 17:34</TD></TR>
+                <TR><TD><B>MTime</B></TD><TD>20/06/2025 17:34</TD></TR>
+                <TR><TD><B>Permisos</B></TD><TD>664</TD></TR>
+                <TR><TD><B>Bloques</B></TD><TD>Bloque0: 0\n</TD></TR>
+            </TABLE>
+        >
+    ];
+
+    inode1 -> inode2;
+}
